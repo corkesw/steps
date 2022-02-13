@@ -7,7 +7,7 @@ const seed = (data) => {
     .query("DROP TABLE IF EXISTS months;")
     .then(() => {
       return db.query(
-        "CREATE TABLE months (month INTEGER,year INTEGER, days INTEGER, steps INTEGER);"
+        "CREATE TABLE months (month_id SERIAL, month INTEGER NOT NULL, year INTEGER NOT NULL, days INTEGER NOT NULL, steps INTEGER NOT NULL);"
       );
     })
     .then(() => {

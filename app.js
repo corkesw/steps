@@ -1,6 +1,6 @@
 const express = require("express");
 const { welcome, getMonths, postMonth } = require("./controllers");
-const { psqlErrors } = require("./errors");
+const { psqlErrors, customErrors } = require("./errors");
 
 const app = express();
 
@@ -10,6 +10,7 @@ app.get("/api", welcome);
 app.get("/api/months", getMonths);
 app.post("/api/months", postMonth);
 
-app.use(psqlErrors)
+app.use(psqlErrors);
+app.use(customErrors);
 
 module.exports = app;

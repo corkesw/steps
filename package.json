@@ -12,7 +12,13 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.5.1",
+    "jest-sorted": "^1.0.14",
     "supertest": "^6.2.2"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-sorted"
+    ]
   },
   "dependencies": {
     "dotenv": "^16.0.0",
